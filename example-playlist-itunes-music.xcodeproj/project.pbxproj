@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF6952822A680B9A00911F18 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6952812A680B9A00911F18 /* AppDelegate.swift */; };
+		EF6952842A680B9A00911F18 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6952832A680B9A00911F18 /* SceneDelegate.swift */; };
+		EF6952862A680B9A00911F18 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6952852A680B9A00911F18 /* ViewController.swift */; };
+		EF6952892A680B9A00911F18 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF6952872A680B9A00911F18 /* Main.storyboard */; };
+		EF69528B2A680B9C00911F18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF69528A2A680B9C00911F18 /* Assets.xcassets */; };
+		EF69528E2A680B9C00911F18 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF69528C2A680B9C00911F18 /* LaunchScreen.storyboard */; };
+		EF6952992A680B9C00911F18 /* example_playlist_itunes_musicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6952982A680B9C00911F18 /* example_playlist_itunes_musicTests.swift */; };
+		EF6952A32A680B9C00911F18 /* example_playlist_itunes_musicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6952A22A680B9C00911F18 /* example_playlist_itunes_musicUITests.swift */; };
+		EF6952A52A680B9C00911F18 /* example_playlist_itunes_musicUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6952A42A680B9C00911F18 /* example_playlist_itunes_musicUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF6952952A680B9C00911F18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF6952762A680B9A00911F18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF69527D2A680B9A00911F18;
+			remoteInfo = "example-playlist-itunes-music";
+		};
+		EF69529F2A680B9C00911F18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF6952762A680B9A00911F18 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF69527D2A680B9A00911F18;
+			remoteInfo = "example-playlist-itunes-music";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF69527E2A680B9A00911F18 /* example-playlist-itunes-music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "example-playlist-itunes-music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF6952812A680B9A00911F18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EF6952832A680B9A00911F18 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EF6952852A680B9A00911F18 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF6952882A680B9A00911F18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EF69528A2A680B9C00911F18 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF69528D2A680B9C00911F18 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF69528F2A680B9C00911F18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF6952942A680B9C00911F18 /* example-playlist-itunes-musicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "example-playlist-itunes-musicTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF6952982A680B9C00911F18 /* example_playlist_itunes_musicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example_playlist_itunes_musicTests.swift; sourceTree = "<group>"; };
+		EF69529E2A680B9C00911F18 /* example-playlist-itunes-musicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "example-playlist-itunes-musicUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF6952A22A680B9C00911F18 /* example_playlist_itunes_musicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example_playlist_itunes_musicUITests.swift; sourceTree = "<group>"; };
+		EF6952A42A680B9C00911F18 /* example_playlist_itunes_musicUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example_playlist_itunes_musicUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF69527B2A680B9A00911F18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF6952912A680B9C00911F18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF69529B2A680B9C00911F18 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF6952752A680B9A00911F18 = {
+			isa = PBXGroup;
+			children = (
+				EF6952802A680B9A00911F18 /* example-playlist-itunes-music */,
+				EF6952972A680B9C00911F18 /* example-playlist-itunes-musicTests */,
+				EF6952A12A680B9C00911F18 /* example-playlist-itunes-musicUITests */,
+				EF69527F2A680B9A00911F18 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF69527F2A680B9A00911F18 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF69527E2A680B9A00911F18 /* example-playlist-itunes-music.app */,
+				EF6952942A680B9C00911F18 /* example-playlist-itunes-musicTests.xctest */,
+				EF69529E2A680B9C00911F18 /* example-playlist-itunes-musicUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF6952802A680B9A00911F18 /* example-playlist-itunes-music */ = {
+			isa = PBXGroup;
+			children = (
+				EF6952812A680B9A00911F18 /* AppDelegate.swift */,
+				EF6952832A680B9A00911F18 /* SceneDelegate.swift */,
+				EF6952852A680B9A00911F18 /* ViewController.swift */,
+				EF6952872A680B9A00911F18 /* Main.storyboard */,
+				EF69528A2A680B9C00911F18 /* Assets.xcassets */,
+				EF69528C2A680B9C00911F18 /* LaunchScreen.storyboard */,
+				EF69528F2A680B9C00911F18 /* Info.plist */,
+			);
+			path = "example-playlist-itunes-music";
+			sourceTree = "<group>";
+		};
+		EF6952972A680B9C00911F18 /* example-playlist-itunes-musicTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF6952982A680B9C00911F18 /* example_playlist_itunes_musicTests.swift */,
+			);
+			path = "example-playlist-itunes-musicTests";
+			sourceTree = "<group>";
+		};
+		EF6952A12A680B9C00911F18 /* example-playlist-itunes-musicUITests */ = {
+			isa = PBXGroup;
+			children = (
+				EF6952A22A680B9C00911F18 /* example_playlist_itunes_musicUITests.swift */,
+				EF6952A42A680B9C00911F18 /* example_playlist_itunes_musicUITestsLaunchTests.swift */,
+			);
+			path = "example-playlist-itunes-musicUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EF69527D2A680B9A00911F18 /* example-playlist-itunes-music */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF6952A82A680B9C00911F18 /* Build configuration list for PBXNativeTarget "example-playlist-itunes-music" */;
+			buildPhases = (
+				EF69527A2A680B9A00911F18 /* Sources */,
+				EF69527B2A680B9A00911F18 /* Frameworks */,
+				EF69527C2A680B9A00911F18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "example-playlist-itunes-music";
+			productName = "example-playlist-itunes-music";
+			productReference = EF69527E2A680B9A00911F18 /* example-playlist-itunes-music.app */;
+			productType = "com.apple.product-type.application";
+		};
+		EF6952932A680B9C00911F18 /* example-playlist-itunes-musicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF6952AB2A680B9C00911F18 /* Build configuration list for PBXNativeTarget "example-playlist-itunes-musicTests" */;
+			buildPhases = (
+				EF6952902A680B9C00911F18 /* Sources */,
+				EF6952912A680B9C00911F18 /* Frameworks */,
+				EF6952922A680B9C00911F18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF6952962A680B9C00911F18 /* PBXTargetDependency */,
+			);
+			name = "example-playlist-itunes-musicTests";
+			productName = "example-playlist-itunes-musicTests";
+			productReference = EF6952942A680B9C00911F18 /* example-playlist-itunes-musicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF69529D2A680B9C00911F18 /* example-playlist-itunes-musicUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF6952AE2A680B9C00911F18 /* Build configuration list for PBXNativeTarget "example-playlist-itunes-musicUITests" */;
+			buildPhases = (
+				EF69529A2A680B9C00911F18 /* Sources */,
+				EF69529B2A680B9C00911F18 /* Frameworks */,
+				EF69529C2A680B9C00911F18 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF6952A02A680B9C00911F18 /* PBXTargetDependency */,
+			);
+			name = "example-playlist-itunes-musicUITests";
+			productName = "example-playlist-itunes-musicUITests";
+			productReference = EF69529E2A680B9C00911F18 /* example-playlist-itunes-musicUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF6952762A680B9A00911F18 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					EF69527D2A680B9A00911F18 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					EF6952932A680B9C00911F18 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = EF69527D2A680B9A00911F18;
+					};
+					EF69529D2A680B9C00911F18 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = EF69527D2A680B9A00911F18;
+					};
+				};
+			};
+			buildConfigurationList = EF6952792A680B9A00911F18 /* Build configuration list for PBXProject "example-playlist-itunes-music" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF6952752A680B9A00911F18;
+			productRefGroup = EF69527F2A680B9A00911F18 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF69527D2A680B9A00911F18 /* example-playlist-itunes-music */,
+				EF6952932A680B9C00911F18 /* example-playlist-itunes-musicTests */,
+				EF69529D2A680B9C00911F18 /* example-playlist-itunes-musicUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF69527C2A680B9A00911F18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF69528E2A680B9C00911F18 /* LaunchScreen.storyboard in Resources */,
+				EF69528B2A680B9C00911F18 /* Assets.xcassets in Resources */,
+				EF6952892A680B9A00911F18 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF6952922A680B9C00911F18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF69529C2A680B9C00911F18 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF69527A2A680B9A00911F18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF6952862A680B9A00911F18 /* ViewController.swift in Sources */,
+				EF6952822A680B9A00911F18 /* AppDelegate.swift in Sources */,
+				EF6952842A680B9A00911F18 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF6952902A680B9C00911F18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF6952992A680B9C00911F18 /* example_playlist_itunes_musicTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF69529A2A680B9C00911F18 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF6952A32A680B9C00911F18 /* example_playlist_itunes_musicUITests.swift in Sources */,
+				EF6952A52A680B9C00911F18 /* example_playlist_itunes_musicUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF6952962A680B9C00911F18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF69527D2A680B9A00911F18 /* example-playlist-itunes-music */;
+			targetProxy = EF6952952A680B9C00911F18 /* PBXContainerItemProxy */;
+		};
+		EF6952A02A680B9C00911F18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF69527D2A680B9A00911F18 /* example-playlist-itunes-music */;
+			targetProxy = EF69529F2A680B9C00911F18 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EF6952872A680B9A00911F18 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF6952882A680B9A00911F18 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EF69528C2A680B9C00911F18 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF69528D2A680B9C00911F18 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF6952A62A680B9C00911F18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EF6952A72A680B9C00911F18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EF6952A92A680B9C00911F18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y46GLN8894;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "example-playlist-itunes-music/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com-test.example-playlist-itunes-music";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF6952AA2A680B9C00911F18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y46GLN8894;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "example-playlist-itunes-music/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com-test.example-playlist-itunes-music";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EF6952AC2A680B9C00911F18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y46GLN8894;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com-test.example-playlist-itunes-musicTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/example-playlist-itunes-music.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/example-playlist-itunes-music";
+			};
+			name = Debug;
+		};
+		EF6952AD2A680B9C00911F18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y46GLN8894;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com-test.example-playlist-itunes-musicTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/example-playlist-itunes-music.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/example-playlist-itunes-music";
+			};
+			name = Release;
+		};
+		EF6952AF2A680B9C00911F18 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y46GLN8894;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com-test.example-playlist-itunes-musicUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "example-playlist-itunes-music";
+			};
+			name = Debug;
+		};
+		EF6952B02A680B9C00911F18 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y46GLN8894;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com-test.example-playlist-itunes-musicUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "example-playlist-itunes-music";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF6952792A680B9A00911F18 /* Build configuration list for PBXProject "example-playlist-itunes-music" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF6952A62A680B9C00911F18 /* Debug */,
+				EF6952A72A680B9C00911F18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF6952A82A680B9C00911F18 /* Build configuration list for PBXNativeTarget "example-playlist-itunes-music" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF6952A92A680B9C00911F18 /* Debug */,
+				EF6952AA2A680B9C00911F18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF6952AB2A680B9C00911F18 /* Build configuration list for PBXNativeTarget "example-playlist-itunes-musicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF6952AC2A680B9C00911F18 /* Debug */,
+				EF6952AD2A680B9C00911F18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF6952AE2A680B9C00911F18 /* Build configuration list for PBXNativeTarget "example-playlist-itunes-musicUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF6952AF2A680B9C00911F18 /* Debug */,
+				EF6952B02A680B9C00911F18 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EF6952762A680B9A00911F18 /* Project object */;
+}
