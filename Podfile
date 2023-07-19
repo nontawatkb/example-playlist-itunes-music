@@ -5,8 +5,9 @@ target 'example-playlist-itunes-music' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for example-playlist-itunes-music
-
+  pod 'Moya/Combine'
+  pod 'Kingfisher', '~> 7.0'
+  
   target 'example-playlist-itunes-musicTests' do
     inherit! :search_paths
     # Pods for testing
