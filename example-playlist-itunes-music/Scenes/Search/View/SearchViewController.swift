@@ -9,11 +9,8 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-    private let viewModel: SearchViewModel = SearchViewModel()
-    
-    let collectionView = UICollectionView(frame: CGRect.zero,
-                                          collectionViewLayout: UICollectionViewFlowLayout())
-    
+    private(set) var viewModel: SearchViewModel!
+    private let spinnerView = SpinnerViewController()
     lazy var searchBar: UISearchBar = {
         let view = UISearchBar()
         view.barStyle = .default
@@ -22,11 +19,31 @@ class SearchViewController: UIViewController {
         view.delegate = self
         return view
     }()
+    
+    private let stackViewContainer: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.spacing = 0
+        view.backgroundColor = .clear
+        return view
+    }()
+    
+    private let emptyLabel: UILabel = {
+        let view = UILabel()
+        view.text = "Not found data"
+        view.textAlignment = .center
+        view.textColor = .lightText
+        return view
+    }()
+    
+    private let collectionView = UICollectionView(frame: CGRect.zero,
+                                          collectionViewLayout: UICollectionViewFlowLayout())
 
     override func viewDidLoad() {
-        view.backgroundColor = .white
+        configure()
         setupUI()
         setupCollectionView()
+        viewModel.input.getSearch(text: "Post Malon")
     }
     
     override func updateViewConstraints() {
@@ -39,22 +56,30 @@ class SearchViewController: UIViewController {
         collectionView.collectionViewLayout.invalidateLayout()
     }
     
+    private func configure() {
+        viewModel = SearchViewModel(viewController: self)
+        bindToViewModel()
+    }
+    
     private func setupUI() {
         view.addSubview(searchBar)
-        view.addSubview(collectionView)
+        view.addSubview(stackViewContainer)
+        stackViewContainer.addArrangedSubview(emptyLabel)
+        stackViewContainer.addArrangedSubview(collectionView)
+        emptyLabel.isHidden = true
         updateUIConstraints()
     }
     
-    func setupCollectionView() {
+    private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
         collectionView.showsHorizontalScrollIndicator = false
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         collectionView.collectionViewLayout = layout
         collectionView.backgroundColor = .clear
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "MyCell")
+        collectionView.register(PlaylistItemCollectionViewCell.self, forCellWithReuseIdentifier: PlaylistItemCollectionViewCell.identifier)
     }
     
     private func updateUIConstraints() {
@@ -64,19 +89,67 @@ class SearchViewController: UIViewController {
         searchBar.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
         searchBar.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
         
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        collectionView.topAnchor.constraint(equalTo: searchBar.bottomAnchor).isActive = true
-        collectionView.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
-        collectionView.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
-        collectionView.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
-        collectionView.reloadData()
+        stackViewContainer.translatesAutoresizingMaskIntoConstraints = false
+        stackViewContainer.topAnchor.constraint(equalTo: searchBar.bottomAnchor).isActive = true
+        stackViewContainer.leadingAnchor.constraint(equalTo: guide.leadingAnchor).isActive = true
+        stackViewContainer.trailingAnchor.constraint(equalTo: guide.trailingAnchor).isActive = true
+        stackViewContainer.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
+        
+        emptyLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
 
+    private func startLoadingView() {
+        addChild(spinnerView)
+        spinnerView.view.frame = view.frame
+        view.addSubview(spinnerView.view)
+        spinnerView.didMove(toParent: self)
+    }
+    
+    private func stopLoadingView() {
+        spinnerView.willMove(toParent: nil)
+        spinnerView.view.removeFromSuperview()
+        spinnerView.removeFromParent()
+    }
+    
+}
+
+// MARK: - Binding
+extension SearchViewController {
+    func bindToViewModel() {
+        viewModel.output.didUpdateTableView = didUpdateTableView()
+        viewModel.output.didUpdateLoadingView = didUpdateLoadingView()
+    }
+    
+    func didUpdateTableView() -> (() -> Void) {
+        return { [weak self] in
+            guard let self = self else { return }
+            if viewModel.output.getCountSearchResults() == 0 {
+                self.emptyLabel.isHidden = false
+            } else {
+                self.emptyLabel.isHidden = true
+            }
+            self.collectionView.reloadData()
+        }
+    }
+
+    func didUpdateLoadingView() -> ((Bool) -> Void) {
+        return { [weak self] isLoading in
+            guard let self = self else { return }
+            if isLoading {
+                self.startLoadingView()
+            } else {
+                self.stopLoadingView()
+            }
+        }
+    }
+    
 }
 
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        emptyLabel.isHidden = true
+        viewModel.input.getSearch(text: searchBar.text)
         searchBar.text = ""
         searchBar.searchTextField.endEditing(true)
     }
@@ -86,35 +159,28 @@ extension SearchViewController: UISearchBarDelegate {
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        debugPrint("collectionView")
+        viewModel.input.didSelectItemAt(collectionView, didSelectItemAt: indexPath)
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        return viewModel.output.getNumberOfRowsInSection(collectionView, numberOfItemsInSection: section)
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MyCell", for: indexPath) 
-        cell.backgroundColor = .lightGray
-        return cell
+        return viewModel.output.getCellForRowAt(collectionView, cellForItemAt: indexPath)
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 16
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 10
+        return 8
     }
 
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var countPerWith = 2
-        if UIDevice.current.orientation.isLandscape || UIDevice.current.orientation.isFlat {
-            countPerWith = 3
-        }
-        let width = (Int(collectionView.frame.width) / countPerWith) - 10
-        
-        return CGSize(width: width, height: width)
+        return viewModel.output.getSizeForItemAt(collectionView, layout: collectionViewLayout, sizeForItemAt: indexPath)
     }
     
 }
+

@@ -26,6 +26,10 @@
 		EF6952992A680B9C00911F18 /* example_playlist_itunes_musicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6952982A680B9C00911F18 /* example_playlist_itunes_musicTests.swift */; };
 		EF6952A32A680B9C00911F18 /* example_playlist_itunes_musicUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6952A22A680B9C00911F18 /* example_playlist_itunes_musicUITests.swift */; };
 		EF6952A52A680B9C00911F18 /* example_playlist_itunes_musicUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF6952A42A680B9C00911F18 /* example_playlist_itunes_musicUITestsLaunchTests.swift */; };
+		EFCC32652A69FCD500D2ABDD /* PlaylistItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCC32642A69FCD500D2ABDD /* PlaylistItemView.swift */; };
+		EFCC32692A69FD5A00D2ABDD /* PlaylistItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCC32682A69FD5A00D2ABDD /* PlaylistItemCollectionViewCell.swift */; };
+		EFCC326B2A6A057B00D2ABDD /*  UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCC326A2A6A057B00D2ABDD /*  UIImageView+Extension.swift */; };
+		EFCC326E2A6A278C00D2ABDD /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCC326D2A6A278C00D2ABDD /* SpinnerViewController.swift */; };
 		FE811D0AF21079215D4AADE9 /* Pods_example_playlist_itunes_musicTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15B33D3BB11C8F1C9C0D9B26 /* Pods_example_playlist_itunes_musicTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +81,10 @@
 		EF69529E2A680B9C00911F18 /* example-playlist-itunes-musicUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "example-playlist-itunes-musicUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6952A22A680B9C00911F18 /* example_playlist_itunes_musicUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example_playlist_itunes_musicUITests.swift; sourceTree = "<group>"; };
 		EF6952A42A680B9C00911F18 /* example_playlist_itunes_musicUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = example_playlist_itunes_musicUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EFCC32642A69FCD500D2ABDD /* PlaylistItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistItemView.swift; sourceTree = "<group>"; };
+		EFCC32682A69FD5A00D2ABDD /* PlaylistItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		EFCC326A2A6A057B00D2ABDD /*  UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		EFCC326D2A6A278C00D2ABDD /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				1D7C480E2A68520600616B02 /* Encodable+Extension.swift */,
+				EFCC326A2A6A057B00D2ABDD /*  UIImageView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -282,6 +291,7 @@
 		EF6952802A680B9A00911F18 /* example-playlist-itunes-music */ = {
 			isa = PBXGroup;
 			children = (
+				EFCC32662A69FD3500D2ABDD /* Shared */,
 				1D7C480D2A6851EA00616B02 /* Extensions */,
 				1D7C480A2A684EE200616B02 /* Data */,
 				1D7C47F62A68498500616B02 /* Resources */,
@@ -309,6 +319,48 @@
 				EF6952A42A680B9C00911F18 /* example_playlist_itunes_musicUITestsLaunchTests.swift */,
 			);
 			path = "example-playlist-itunes-musicUITests";
+			sourceTree = "<group>";
+		};
+		EFCC32622A69FC8400D2ABDD /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				EFCC32632A69FC9000D2ABDD /* PlaylistItemView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		EFCC32632A69FC9000D2ABDD /* PlaylistItemView */ = {
+			isa = PBXGroup;
+			children = (
+				EFCC32642A69FCD500D2ABDD /* PlaylistItemView.swift */,
+			);
+			path = PlaylistItemView;
+			sourceTree = "<group>";
+		};
+		EFCC32662A69FD3500D2ABDD /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				EFCC326C2A6A278100D2ABDD /* ViewController */,
+				EFCC32672A69FD3E00D2ABDD /* CollectionViewCell */,
+				EFCC32622A69FC8400D2ABDD /* Components */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		EFCC32672A69FD3E00D2ABDD /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				EFCC32682A69FD5A00D2ABDD /* PlaylistItemCollectionViewCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		EFCC326C2A6A278100D2ABDD /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EFCC326D2A6A278C00D2ABDD /* SpinnerViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -553,12 +605,16 @@
 				1D7C47FA2A684C0900616B02 /* PreviewController.swift in Sources */,
 				1D7C480F2A68520600616B02 /* Encodable+Extension.swift in Sources */,
 				1D7C48052A684D5600616B02 /* SearchViewModel.swift in Sources */,
+				EFCC326E2A6A278C00D2ABDD /* SpinnerViewController.swift in Sources */,
 				1D7C48152A6853D000616B02 /* ITunesRepository.swift in Sources */,
+				EFCC32692A69FD5A00D2ABDD /* PlaylistItemCollectionViewCell.swift in Sources */,
 				EF6952822A680B9A00911F18 /* AppDelegate.swift in Sources */,
 				1D7C480C2A6850B300616B02 /* ITunesAPI.swift in Sources */,
 				1D7C48172A68542A00616B02 /* SearchResponse.swift in Sources */,
 				1D7C47F52A6847D100616B02 /* SearchViewController.swift in Sources */,
+				EFCC32652A69FCD500D2ABDD /* PlaylistItemView.swift in Sources */,
 				1D7C48092A684D8B00616B02 /* PreviewViewModel.swift in Sources */,
+				EFCC326B2A6A057B00D2ABDD /*  UIImageView+Extension.swift in Sources */,
 				1D7C48132A68528300616B02 /* SearchRequest.swift in Sources */,
 				EF6952842A680B9A00911F18 /* SceneDelegate.swift in Sources */,
 			);
