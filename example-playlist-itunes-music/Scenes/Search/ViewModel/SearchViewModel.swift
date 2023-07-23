@@ -108,7 +108,7 @@ extension SearchViewModel: SearchProtocolOutput {
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PlaylistItemCollectionViewCell.identifier, for: indexPath) as! PlaylistItemCollectionViewCell
-            cell.data = listSearchResults[indexPath.row]
+            cell.data = self.listSearchResults[indexPath.row]
             return cell
         }
     }

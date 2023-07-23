@@ -1,0 +1,32 @@
+{
+  "configurations" : [
+    {
+      "id" : "80A0D167-DEC6-43DD-9398-5154B16F678A",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "codeCoverage" : {
+      "targets" : [
+        {
+          "containerPath" : "container:example-playlist-itunes-music.xcodeproj",
+          "identifier" : "EF69527D2A680B9A00911F18",
+          "name" : "example-playlist-itunes-music"
+        }
+      ]
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:example-playlist-itunes-music.xcodeproj",
+        "identifier" : "EF6952932A680B9C00911F18",
+        "name" : "example-playlist-itunes-musicTests"
+      }
+    }
+  ],
+  "version" : 1
+}

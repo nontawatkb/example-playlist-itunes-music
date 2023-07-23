@@ -14,8 +14,12 @@ protocol ITunesRepository {
 
 final class ITunesRepositoryImpl: ITunesRepository {
     
-    private let provider: MoyaProvider<ITunesAPI> = MoyaProvider<ITunesAPI>()
-
+    private let provider: MoyaProvider<ITunesAPI>
+    
+    init(provider: MoyaProvider<ITunesAPI> = MoyaProvider<ITunesAPI>()) {
+        self.provider = provider
+    }
+    
     func getSearch(request: SearchRequest) -> AnyPublisher<SearchResponse?, MoyaError> {
         return self.provider.requestPublisher(.getSearch(request: request))
             .map(SearchResponse?.self)

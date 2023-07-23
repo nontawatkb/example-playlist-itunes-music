@@ -36,7 +36,10 @@ extension ITunesAPI: TargetType {
     }
 
     public var sampleData: Data {
-        return Data()
+        switch self {
+        case .getSearch:
+            return GetJsonFile.shared.readLocalFile(forName: "SearchResponse")
+        }
     }
 
     public var task: Task {

@@ -7,4 +7,7 @@
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:example-playlist-itunes-musicTests/example-playlist-itunes-music.xctestplan">
+   </FileRef>
 </Workspace>

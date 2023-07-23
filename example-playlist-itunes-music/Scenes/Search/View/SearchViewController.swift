@@ -44,8 +44,8 @@ class SearchViewController: UIViewController {
         configure()
         setupUI()
         setupCollectionView()
-        searchBar.text = "Taylor Swift"
-        viewModel.input.getSearch(text: "Taylor Swift")
+//        searchBar.text = "Taylor Swift"
+//        viewModel.input.getSearch(text: "Taylor Swift")
     }
     
     deinit {

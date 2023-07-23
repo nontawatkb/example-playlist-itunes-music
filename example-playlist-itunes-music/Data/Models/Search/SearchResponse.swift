@@ -12,8 +12,6 @@ public struct SearchResponse: Codable, Hashable {
     public var resultCount: Int?
     public var results: [SearchItem]?
     
-    public init() {}
-    
     enum CodingKeys: String, CodingKey {
         case resultCount = "resultCount"
         case results = "results"
