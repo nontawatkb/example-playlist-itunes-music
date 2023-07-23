@@ -68,6 +68,7 @@ class PlaylistItemCollectionViewCell: UICollectionViewCell {
         view.image = UIImage(named: "play-button")?.withRenderingMode(.alwaysTemplate)
         view.tintColor = .white
         view.contentMode = .scaleAspectFit
+        view.isHidden = true
         return view
     }()
     
@@ -130,6 +131,7 @@ class PlaylistItemCollectionViewCell: UICollectionViewCell {
                                         .loadDiskFileSynchronously,
                                         .cacheOriginalImage,
                                         .transition(.fade(0.10))])
+            iconPlayView.isHidden = false
         } else {
             imagePoster.setPlaceholderImageView()
         }

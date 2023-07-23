@@ -11,6 +11,7 @@ class SearchViewController: UIViewController {
     
     private(set) var viewModel: SearchViewModel!
     private let spinnerView = SpinnerViewController()
+    
     lazy var searchBar: UISearchBar = {
         let view = UISearchBar()
         view.barStyle = .default
@@ -43,7 +44,12 @@ class SearchViewController: UIViewController {
         configure()
         setupUI()
         setupCollectionView()
-        viewModel.input.getSearch(text: "Post Malon")
+        searchBar.text = "Taylor Swift"
+        viewModel.input.getSearch(text: "Taylor Swift")
+    }
+    
+    deinit {
+        debugPrint("🔅 Deinitialized. \(String(describing: self))")
     }
     
     override func updateViewConstraints() {
@@ -62,6 +68,7 @@ class SearchViewController: UIViewController {
     }
     
     private func setupUI() {
+        view.backgroundColor = .black
         view.addSubview(searchBar)
         view.addSubview(stackViewContainer)
         stackViewContainer.addArrangedSubview(emptyLabel)
@@ -80,6 +87,7 @@ class SearchViewController: UIViewController {
         collectionView.collectionViewLayout = layout
         collectionView.backgroundColor = .clear
         collectionView.register(PlaylistItemCollectionViewCell.self, forCellWithReuseIdentifier: PlaylistItemCollectionViewCell.identifier)
+        collectionView.register(ResultSearchCollectionViewCell.self, forCellWithReuseIdentifier: ResultSearchCollectionViewCell.identifier)
     }
     
     private func updateUIConstraints() {
@@ -96,19 +104,6 @@ class SearchViewController: UIViewController {
         stackViewContainer.bottomAnchor.constraint(equalTo: guide.bottomAnchor).isActive = true
         
         emptyLabel.heightAnchor.constraint(equalToConstant: 100).isActive = true
-    }
-
-    private func startLoadingView() {
-        addChild(spinnerView)
-        spinnerView.view.frame = view.frame
-        view.addSubview(spinnerView.view)
-        spinnerView.didMove(toParent: self)
-    }
-    
-    private func stopLoadingView() {
-        spinnerView.willMove(toParent: nil)
-        spinnerView.view.removeFromSuperview()
-        spinnerView.removeFromParent()
     }
     
 }
@@ -136,9 +131,9 @@ extension SearchViewController {
         return { [weak self] isLoading in
             guard let self = self else { return }
             if isLoading {
-                self.startLoadingView()
+                self.startLoadingView(spinnerView: spinnerView)
             } else {
-                self.stopLoadingView()
+                self.stopLoadingView(spinnerView: spinnerView)
             }
         }
     }
@@ -150,13 +145,16 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         emptyLabel.isHidden = true
         viewModel.input.getSearch(text: searchBar.text)
-        searchBar.text = ""
         searchBar.searchTextField.endEditing(true)
     }
     
 }
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return viewModel.output.getNumberOfSections(collectionView)
+    }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.input.didSelectItemAt(collectionView, didSelectItemAt: indexPath)

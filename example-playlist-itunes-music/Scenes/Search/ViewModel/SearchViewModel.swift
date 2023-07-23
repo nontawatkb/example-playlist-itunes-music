@@ -22,6 +22,7 @@ protocol SearchProtocolOutput: AnyObject {
     
     func getCountSearchResults() -> Int
     
+    func getNumberOfSections(_ collectionView: UICollectionView) -> Int
     func getNumberOfRowsInSection(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     func getCellForRowAt(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     func getSizeForItemAt(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
@@ -43,13 +44,13 @@ class SearchViewModel: SearchProtocol {
     
     // MARK: - Properties
     private var listSearchResults: [SearchItem] = []
-    let viewController: UIViewController
+    weak var viewController: UIViewController?
+    private var searchText: String?
 
     init(viewController: UIViewController,
          getSearchUseCase: GetSearchUseCase = GetSearchUseCaseImpl()) {
         self.viewController = viewController
         self.getSearchUseCase = getSearchUseCase
-        clearCache()
     }
     
     deinit {
@@ -59,23 +60,14 @@ class SearchViewModel: SearchProtocol {
     // MARK: - Data-binding OutPut
     var didUpdateTableView: (() -> Void)?
     var didUpdateLoadingView: ((Bool) -> Void)?
-    
-    private func clearCache() {
-        let path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true)[0] as String
-        let content = try? FileManager.default.contentsOfDirectory(atPath: path)
-        debugPrint("count \(content?.count)")
-        try? FileManager.default.removeItem(atPath: path)
-        
-        let contentNew = try? FileManager.default.contentsOfDirectory(atPath: path)
-        debugPrint("contentNew \(contentNew?.count)")
-    }
-    
+
 }
 
 // MARK: - Input
 extension SearchViewModel: SearchProtocolInput {
     func getSearch(text: String?) {
         guard let term = text else { return }
+        self.searchText = term
         self.didUpdateLoadingView?(true)
         self.getSearchUseCase.execute(term: term)
             .sink(receiveCompletion: { _ in
@@ -89,33 +81,52 @@ extension SearchViewModel: SearchProtocolInput {
     
     func didSelectItemAt(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let previewController = PreviewController()
-        previewController.configure(previewItem: self.listSearchResults[indexPath.row])
-        viewController.present(previewController, animated: true)
-        
+        previewController.configure(searchItem: self.listSearchResults[indexPath.row])
+        viewController?.present(previewController, animated: true)
     }
 }
 
 // MARK: - OutPut
 extension SearchViewModel: SearchProtocolOutput {
+    
+    func getNumberOfSections(_ collectionView: UICollectionView) -> Int {
+        return 2
+    }
+    
     func getNumberOfRowsInSection(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.listSearchResults.count
+        if section == 0 {
+            return self.listSearchResults.isEmpty ? 0 : 1
+        } else {
+            return self.listSearchResults.count
+        }
     }
     
     func getCellForRowAt(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PlaylistItemCollectionViewCell.identifier, for: indexPath) as! PlaylistItemCollectionViewCell
-        cell.data = listSearchResults[indexPath.row]
-        return cell
+        if indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ResultSearchCollectionViewCell.identifier, for: indexPath) as! ResultSearchCollectionViewCell
+            cell.searchText = self.searchText
+            return cell
+        } else {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PlaylistItemCollectionViewCell.identifier, for: indexPath) as! PlaylistItemCollectionViewCell
+            cell.data = listSearchResults[indexPath.row]
+            return cell
+        }
     }
     
     func getSizeForItemAt(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        var countPerWith = 2
-        if UIDevice.current.orientation.isLandscape || UIDevice.current.orientation.isFlat {
-            countPerWith = 3
+        if indexPath.section == 0 {
+            let width = collectionView.frame.width - 16
+            return CGSize(width: width, height: 45)
+        } else {
+            var countPerWith = 2
+            if UIDevice.current.orientation.isLandscape || UIDevice.current.orientation.isFlat {
+                countPerWith = 3
+            }
+            let cgCountPerWith = CGFloat(countPerWith)
+            let removeWidth = ((cgCountPerWith - 1.0) * 8.0) / cgCountPerWith
+            let width = ((collectionView.frame.width - 16.0) / cgCountPerWith) - removeWidth
+            return CGSize(width: width, height: width)
         }
-        let cgCountPerWith = CGFloat(countPerWith)
-        let removeWidth = ((cgCountPerWith - 1.0) * 8.0) / cgCountPerWith
-        let width = ((collectionView.frame.width - 16.0) / cgCountPerWith) - removeWidth
-        return CGSize(width: width, height: width)
     }
     
     func getCountSearchResults() -> Int {
