@@ -55,7 +55,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0747A882B3FCE34D219854CB /* Pods-example-playlist-itunes-music-example-playlist-itunes-musicUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example-playlist-itunes-music-example-playlist-itunes-musicUITests.debug.xcconfig"; path = "Target Support Files/Pods-example-playlist-itunes-music-example-playlist-itunes-musicUITests/Pods-example-playlist-itunes-music-example-playlist-itunes-musicUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		15B33D3BB11C8F1C9C0D9B26 /* Pods_example_playlist_itunes_musicTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_example_playlist_itunes_musicTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		16997A70BFF9CD8D1F3EA2DA /* Pods_example_playlist_itunes_music.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_example_playlist_itunes_music.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D0AC44F2A6D16D700BC25FB /* GetSearchUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetSearchUseCaseTests.swift; sourceTree = "<group>"; };
@@ -88,7 +87,6 @@
 		3AA9E3031A0FC3E900523E67 /* Pods-example-playlist-itunes-music.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example-playlist-itunes-music.debug.xcconfig"; path = "Target Support Files/Pods-example-playlist-itunes-music/Pods-example-playlist-itunes-music.debug.xcconfig"; sourceTree = "<group>"; };
 		7BF3D98F4F5722C877E3072D /* Pods-example-playlist-itunes-musicTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example-playlist-itunes-musicTests.debug.xcconfig"; path = "Target Support Files/Pods-example-playlist-itunes-musicTests/Pods-example-playlist-itunes-musicTests.debug.xcconfig"; sourceTree = "<group>"; };
 		8D3F20A4ECAD64A3D86DD64C /* Pods-example-playlist-itunes-music.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example-playlist-itunes-music.release.xcconfig"; path = "Target Support Files/Pods-example-playlist-itunes-music/Pods-example-playlist-itunes-music.release.xcconfig"; sourceTree = "<group>"; };
-		9369851DDD533539A437DB07 /* Pods-example-playlist-itunes-music-example-playlist-itunes-musicUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example-playlist-itunes-music-example-playlist-itunes-musicUITests.release.xcconfig"; path = "Target Support Files/Pods-example-playlist-itunes-music-example-playlist-itunes-musicUITests/Pods-example-playlist-itunes-music-example-playlist-itunes-musicUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CBFC9B27A40876A58FA9E728 /* Pods-example-playlist-itunes-musicTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-example-playlist-itunes-musicTests.release.xcconfig"; path = "Target Support Files/Pods-example-playlist-itunes-musicTests/Pods-example-playlist-itunes-musicTests.release.xcconfig"; sourceTree = "<group>"; };
 		EF69527E2A680B9A00911F18 /* example-playlist-itunes-music.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "example-playlist-itunes-music.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF6952812A680B9A00911F18 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -365,8 +363,6 @@
 			children = (
 				3AA9E3031A0FC3E900523E67 /* Pods-example-playlist-itunes-music.debug.xcconfig */,
 				8D3F20A4ECAD64A3D86DD64C /* Pods-example-playlist-itunes-music.release.xcconfig */,
-				0747A882B3FCE34D219854CB /* Pods-example-playlist-itunes-music-example-playlist-itunes-musicUITests.debug.xcconfig */,
-				9369851DDD533539A437DB07 /* Pods-example-playlist-itunes-music-example-playlist-itunes-musicUITests.release.xcconfig */,
 				7BF3D98F4F5722C877E3072D /* Pods-example-playlist-itunes-musicTests.debug.xcconfig */,
 				CBFC9B27A40876A58FA9E728 /* Pods-example-playlist-itunes-musicTests.release.xcconfig */,
 			);
@@ -882,7 +878,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y46GLN8894;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com-test.example-playlist-itunes-musicTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -903,7 +899,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Y46GLN8894;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com-test.example-playlist-itunes-musicTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
